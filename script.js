@@ -9,16 +9,18 @@ fetch("https://www.reddit.com/r/aww/.json")
 
       let titleEl = document.createElement("p");
       titleEl.innerText = entry.data.title;
+      titleEl.classList.add("title");
       postEl.appendChild(titleEl);
 
       let picEl = document.createElement("img");
       picEl.src = entry.data.thumbnail;
+      picEl.classList.add("pic");
       postEl.appendChild(picEl);
 
       let linkEl = document.createElement("a");
       //   linkEl.setAttribute("href", `www.reddit.com${entry.data.permalink}`);
-      linkEl.href = `www.reddit.com${entry.data.permalink}`;
-      linkEl;
+      linkEl.href = `http://www.reddit.com${entry.data.permalink}`;
+      linkEl.classList.add("link");
       linkEl.innerText = "link";
       postEl.appendChild(linkEl);
     }
